@@ -9,6 +9,9 @@ const server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
 
 //set express to use static html
 app.use(express.static(path.join(__dirname, '/views')));
+app.use('/snapJS', express.static(path.join(__dirname, '/dist')));
+app.use('/mySVGJS',express.static(path.join(__dirname, '/snapsvg')));
+app.use('/SVGs',express.static(path.join(__dirname, '/SVGs')));
 
 //render index on /
 app.get('/', function( req, res) {
